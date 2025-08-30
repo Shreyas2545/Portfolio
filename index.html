@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreyas Hadawale | Portfolio</title>
+
+  <!-- Tailwind CSS (with config defined before it loads) -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+  <!-- Custom Script (Show More / Show Less Projects) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleButton = document.getElementById('toggle-projects');
+      const extraProjects = document.querySelectorAll('.project-extra');
+      let isExpanded = false;
+
+      if (!toggleButton) {
+        console.error('Toggle button not found! Check if the ID "toggle-projects" is correct.');
+        return;
+      }
+
+      if (extraProjects.length === 0) {
+        console.error('No extra projects found! Check if elements have the class "project-extra".');
+        return;
+      }
+
+      toggleButton.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        extraProjects.forEach(project => {
+          project.classList.toggle('hidden', !isExpanded);
+        });
+        toggleButton.textContent = isExpanded ? 'Show Less' : 'Show More';
+        console.log(`Toggled projects. isExpanded: ${isExpanded}`);
+      });
+    });
+  </script>
+</head>
+
+<body class="bg-white text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200">
+
+  <!-- Navigation -->
+  <nav class="shadow-lg fixed w-full z-10 bg-white dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <a href="#" class="text-2xl font-bold text-green-800 dark:text-green-400">MyPortfolio</a>
+        <div class="hidden md:flex space-x-8">
+          <a href="#about" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">About</a>
+          <a href="#projects" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Projects</a>
+          <a href="#skills" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Skills</a>
+          <a href="#contact" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Contact</a>
+        </div>
+        <div class="flex items-center">
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" class="text-gray-800 dark:text-gray-300 focus:outline-none mr-4">
+            <i id="theme-icon" class="fas fa-sun"></i>
+          </button>
+          <button id="menu-button" class="md:hidden text-gray-800 dark:text-gray-300 focus:outline-none">☰</button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+      <a href="#about" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">About</a>
+      <a href="#projects" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Projects</a>
+      <a href="#skills" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Skills</a>
+      <a href="#contact" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="h-screen flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-gray-900">
+    <h1 class="text-4xl md:text-5xl font-bold">
+      Hey, I'm <span class="text-green-800 dark:text-green-400">Shreyas Hadawale </span>
+    </h1>
+    <p class="text-lg md:text-xl text-gray-800 dark:text-gray-300 mt-3">A Web & Software Developer</p>
+    
+    <!-- Buttons Container -->
+    <div class="mt-6 flex space-x-4">
+      <a href="#about" class="px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
+        Learn More
+      </a>
+      <a href="your-resume-link.pdf" target="_blank" class="px-6 py-3 border-2 border-green-800 dark:border-green-500 text-green-800 dark:text-green-500 rounded-full text-lg hover:bg-green-800 dark:hover:bg-green-500 hover:text-white transition">
+        View Resume
+      </a>
+    </div>
+  
+    <p class="mt-6 text-gray-800 dark:text-gray-300 text-sm md:text-base max-w-xl">
+      A passionate Web Developer & Software Engineer, crafting innovative and scalable solutions for the digital world.
+    </p>
+  </header>
+  
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6 lg:flex lg:items-center">
+      <img src="profile.jpg" alt="  Shreyas Hadawale " class="w-48 h-48 object-cover rounded-full mx-auto lg:mx-0">
+      <div class="mt-6 lg:mt-0 lg:ml-10">
+        <h2 class="text-3xl font-bold text-green-800 dark:text-green-400">About Me</h2>
+        <p class="mt-4 text-gray-800 dark:text-gray-300">
+          I am Shreyas Hadawale, a passionate Web and Software Developer specializing in building modern, responsive websites and applications. Currently pursuing a diploma in Computer Engineering, I focus on creating clean, efficient, and user-friendly solutions for portfolios, e-commerce platforms, and custom software.
+          <br><br>
+          With a strong foundation in HTML, CSS, JavaScript, and C++, I continuously refine my skills to stay ahead in both web development and software engineering. My goal is to develop high-quality, scalable applications that enhance user experiences and solve real-world problems.
+        </p>
+        <a href="#projects" class="mt-4 inline-block px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
+          View Projects
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center">My Skills</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+  
+        <!-- HTML & CSS -->
+        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">HTML & CSS</h3>
+          <p class="text-gray-800 dark:text-gray-300 mt-2">Expert in structuring and styling responsive web pages.</p>
+        </div>
+  
+        <!-- Tailwind CSS -->
+        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Tailwind CSS</h3>
+          <p class="text-gray-800 dark:text-gray-300 mt-2">Skilled in creating modern, scalable UI components.</p>
+        </div>
+  
+        <!-- JavaScript -->
+        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">JavaScript</h3>
+          <p class="text-gray-800 dark:text-gray-300 mt-2">Proficient in building interactive and dynamic web applications.</p>
+        </div>
+  
+        
+        <!-- React -->
+        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">React</h3>
+          <p class="text-gray-800 dark:text-gray-300 mt-2">Experienced in building performant, reusable, and maintainable React applications.</p>
+        </div>
+  
+
+        <!-- Python (Frontend-focused) -->
+        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Python</h3>
+          <p class="text-gray-800 dark:text-gray-300 mt-2">Used for scripting, automation, and problem-solving.</p>
+        </div>
+  
+        <!-- C++ -->
+        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">C++</h3>
+          <p class="text-gray-800 dark:text-gray-300 mt-2">Strong understanding of object-oriented programming and algorithms.</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center">Projects</h2>
+      <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <!-- Project 1 -->
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/techshala-src.png" alt="Techshala Website Clone" class="w-full h-40 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">TechShala Website</h3>
+            <p class="text-gray-800 dark:text-gray-300 mt-2">
+              A Techshala projects built using HTML and Vanilla CSS, presented by my team at the Vidyalkankar-2025 college hackathon. These projects showcase about the work of techshala contributed over the years and by hosting several events which makes learning enjoyable.
+            </p>
+            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+              View Code
+            </a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/calculator-src.png" alt="Calculator App" class="w-full h-40 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Calculator App</h3>
+            <p class="text-gray-800 dark:text-gray-300 mt-2">
+              A simple yet efficient calculator application built with React and styled using Tailwind CSS. The calculator supports basic arithmetic operations (addition, subtraction, multiplication, division), percentage calculations, and real-time updates with smooth interactions.
+            </p>
+            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+              View Code
+            </a>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/weather-app-src.png" alt="Weather App" class="w-full h-40 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Weather App</h3>
+            <p class="text-gray-800 dark:text-gray-300 mt-2">
+              A responsive weather application built with React and powered by the OpenWeatherMap API. This project highlights my skills in API integration, state management, and building dynamic UIs. The app delivers real-time weather data, including temperature, humidity, wind speed, and conditions .
+            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+              View Code
+            </a>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden hidden project-extra">
+          <img src="assets/textutils-src.png" alt="TextUtils App" class="w-full h-40 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">TextUtils App</h3>
+            <p class="text-gray-800 dark:text-gray-300 mt-2">
+              TextUtils is a simple React-based text utility app that allows users to manipulate and analyze text. You can convert text to uppercase, lowercase, clear it, and view a summary of word and character counts.
+            </p>
+            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+              View Code
+            </a>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden hidden project-extra">
+          <img src="assets/to-do-list-src.png" alt="To-Do List" class="w-full h-40 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">To-Do List</h3>
+            <p class="text-gray-800 dark:text-gray-300 mt-2">
+              A simple and interactive To-Do List web application built using HTML, CSS, and JavaScript. It allows users to add, edit, delete, and mark tasks as completed. The app features a clean and responsive design, demonstrating my front-end development skills, including DOM manipulation, event handling, and dynamic UI updates.
+            </p>
+            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+              View Code
+            </a>
+          </div>
+        </div>
+        <!-- Project 6 -->
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden hidden project-extra">
+          <img src="assets/fetchmon-src.png"alt="Fetchmon" class="w-full h-40 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Fetchmon</h3>
+            <p class="text-gray-800 dark:text-gray-300 mt-2">
+             A simple and responsive Pokémon Info App built using React and the PokéAPI.This app allows users to search for any Pokémon by name and displays key details including type, ability, height, weight, and image.
+            </p>
+            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+              View Code
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <button id="toggle-projects" class="px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+          Show More
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-green-800 dark:text-green-400">Contact Me</h2>
+      <p class="text-gray-800 dark:text-gray-300 mt-4">Let's work together! Reach out to me.</p>
+      <a href="mailto:your-email@example.com" class="mt-6 inline-block px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
+        Email Me
+      </a>
+  
+      <!-- Social Icons -->
+      <div class="flex justify-center space-x-6 mt-6">
+        <a href="https://www.linkedin.com/in/shreyas-hadawale-9104672b6/" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Shreyas2545" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com/_shreyas.ig/?hl=en" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+       <a href="mailto:shreyashadawale25@gmail.com" 
+   class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition"
+   title="Send me an email">
+  <i class="fa-solid fa-envelope"></i>
+</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- JavaScript -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+    // Mobile menu toggle
+    document.getElementById('menu-button').addEventListener('click', function () {
+      var menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if(document.documentElement.classList.contains('dark')) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    });
+  </script>
+</body>
+</html>
