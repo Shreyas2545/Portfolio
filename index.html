@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shreyas Hadawale | Portfolio</title>
+  <title>Shreyas Hadawale </title>
 
   <!-- Tailwind CSS (with config defined before it loads) -->
   <script>
@@ -18,6 +18,17 @@
 
   <!-- Custom Script (Show More / Show Less Projects) -->
   <script>
+
+    document.querySelectorAll('.skill-card').forEach(card => {
+    card.addEventListener('click', () => {
+      // remove active state from all
+      document.querySelectorAll('.skill-card').forEach(c => c.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50', 'dark:bg-blue-900/30'));
+
+      // add active state to clicked
+      card.classList.add('ring-2', 'ring-blue-500', 'bg-blue-50', 'dark:bg-blue-900/30');
+    });
+  });
+    
     document.addEventListener('DOMContentLoaded', () => {
       const toggleButton = document.getElementById('toggle-projects');
       const extraProjects = document.querySelectorAll('.project-extra');
@@ -51,7 +62,7 @@
   <nav class="shadow-lg fixed w-full z-10 bg-white dark:bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
-        <a href="#" class="text-2xl font-bold text-green-800 dark:text-green-400">MyPortfolio</a>
+        <a href="#" class="text-2xl font-bold text-green-800 dark:text-green-400">Shreyas10</a>
         <div class="hidden md:flex space-x-8">
           <a href="#about" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">About</a>
           <a href="#projects" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Projects</a>
@@ -108,151 +119,226 @@
           <br><br>
           With a strong foundation in HTML, CSS, JavaScript, and C++, I continuously refine my skills to stay ahead in both web development and software engineering. My goal is to develop high-quality, scalable applications that enhance user experiences and solve real-world problems.
         </p>
-        <a href="#projects" class="mt-4 inline-block px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
+        <a href="#projects" class=" mt-8 mt-4 inline-block px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
           View Projects
         </a>
       </div>
     </div>
   </section>
-  
-  <!-- Skills Section -->
-  <section id="skills" class="py-16 bg-white dark:bg-gray-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center">My Skills</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-  
-        <!-- HTML & CSS -->
-        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
-          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">HTML & CSS</h3>
-          <p class="text-gray-800 dark:text-gray-300 mt-2">Expert in structuring and styling responsive web pages.</p>
-        </div>
-  
-        <!-- Tailwind CSS -->
-        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
-          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Tailwind CSS</h3>
-          <p class="text-gray-800 dark:text-gray-300 mt-2">Skilled in creating modern, scalable UI components.</p>
-        </div>
-  
-        <!-- JavaScript -->
-        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
-          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">JavaScript</h3>
-          <p class="text-gray-800 dark:text-gray-300 mt-2">Proficient in building interactive and dynamic web applications.</p>
-        </div>
-  
-        
-        <!-- React -->
-        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
-          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">React</h3>
-          <p class="text-gray-800 dark:text-gray-300 mt-2">Experienced in building performant, reusable, and maintainable React applications.</p>
-        </div>
-  
+  <!-- Skills -->
+<section id="skills" class="py-16 bg-gray-100 dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">Skills</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
 
-        <!-- Python (Frontend-focused) -->
-        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
-          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Python</h3>
-          <p class="text-gray-800 dark:text-gray-300 mt-2">Used for scripting, automation, and problem-solving.</p>
-        </div>
-  
-        <!-- C++ -->
-        <div class="p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-lg text-center">
-          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">C++</h3>
-          <p class="text-gray-800 dark:text-gray-300 mt-2">Strong understanding of object-oriented programming and algorithms.</p>
-        </div>
-  
-      </div>
+      <!-- Skill cards -->
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">Git</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">JavaScript</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">HTML</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">Node.js</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">CSS</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">React.js</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">TailwindCSS</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">Java</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">C</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">Python</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500"></div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">Figma</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">SQL</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">Canva</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">MongoDB</div>
+
+      <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                  dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                  border border-transparent hover:border-green-500">C++</div>
+
+
     </div>
-  </section>
-  <!-- Projects Section -->
-  <section id="projects" class="py-16 bg-gray-100 dark:bg-gray-800">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center">Projects</h2>
-      <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        <!-- Project 1 -->
-        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-          <img src="assets/techshala-src.png" alt="Techshala Website Clone" class="w-full h-40 object-cover">
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">TechShala Website</h3>
-            <p class="text-gray-800 dark:text-gray-300 mt-2">
-              A Techshala projects built using HTML and Vanilla CSS, presented by my team at the Vidyalkankar-2025 college hackathon. These projects showcase about the work of techshala contributed over the years and by hosting several events which makes learning enjoyable.
-            </p>
-            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
-              View Code
-            </a>
+  </div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-16 bg-gray-100 dark:bg-gray-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-left">Projects</h2>
+    <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+
+      <!-- Project 1: Techshala Website -->
+      <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+        <img src="assets/techshala-src.png" alt="Techshala Website" class="w-full h-44 object-cover">
+        <div class="p-6 flex flex-col flex-grow text-left">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Techshala Website</h3>
+          <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
+            A project that showcases Techshala events and activities, winner of my first hackathon.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">HTML</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">CSS</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">JavaScript</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Supabase</span>
           </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-          <img src="assets/calculator-src.png" alt="Calculator App" class="w-full h-40 object-cover">
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Calculator App</h3>
-            <p class="text-gray-800 dark:text-gray-300 mt-2">
-              A simple yet efficient calculator application built with React and styled using Tailwind CSS. The calculator supports basic arithmetic operations (addition, subtraction, multiplication, division), percentage calculations, and real-time updates with smooth interactions.
-            </p>
-            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
-              View Code
-            </a>
-          </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-          <img src="assets/weather-app-src.png" alt="Weather App" class="w-full h-40 object-cover">
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Weather App</h3>
-            <p class="text-gray-800 dark:text-gray-300 mt-2">
-              A responsive weather application built with React and powered by the OpenWeatherMap API. This project highlights my skills in API integration, state management, and building dynamic UIs. The app delivers real-time weather data, including temperature, humidity, wind speed, and conditions .
-            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
-              View Code
-            </a>
-          </div>
-        </div>
-        <!-- Project 4 -->
-        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden hidden project-extra">
-          <img src="assets/textutils-src.png" alt="TextUtils App" class="w-full h-40 object-cover">
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">TextUtils App</h3>
-            <p class="text-gray-800 dark:text-gray-300 mt-2">
-              TextUtils is a simple React-based text utility app that allows users to manipulate and analyze text. You can convert text to uppercase, lowercase, clear it, and view a summary of word and character counts.
-            </p>
-            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
-              View Code
-            </a>
-          </div>
-        </div>
-        <!-- Project 5 -->
-        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden hidden project-extra">
-          <img src="assets/to-do-list-src.png" alt="To-Do List" class="w-full h-40 object-cover">
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">To-Do List</h3>
-            <p class="text-gray-800 dark:text-gray-300 mt-2">
-              A simple and interactive To-Do List web application built using HTML, CSS, and JavaScript. It allows users to add, edit, delete, and mark tasks as completed. The app features a clean and responsive design, demonstrating my front-end development skills, including DOM manipulation, event handling, and dynamic UI updates.
-            </p>
-            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
-              View Code
-            </a>
-          </div>
-        </div>
-        <!-- Project 6 -->
-        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden hidden project-extra">
-          <img src="assets/fetchmon-src.png"alt="Fetchmon" class="w-full h-40 object-cover">
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400">Fetchmon</h3>
-            <p class="text-gray-800 dark:text-gray-300 mt-2">
-             A simple and responsive Pokémon Info App built using React and the PokéAPI.This app allows users to search for any Pokémon by name and displays key details including type, ability, height, weight, and image.
-            </p>
-            <a href="https://github.com/Shreyas2545" target="_blank" class="mt-4 inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
-              View Code
-            </a>
-          </div>
+          <a href="https://github.com/Shreyas2545" target="_blank" class="mt-auto inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+            View Project
+          </a>
         </div>
       </div>
-      <div class="text-center mt-8">
-        <button id="toggle-projects" class="px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
-          Show More
-        </button>
+
+      <!-- Project 2: Fetchmon -->
+      <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+        <img src="assets/fetchmon-src.png" alt="Fetchmon" class="w-full h-44 object-cover">
+        <div class="p-6 flex flex-col flex-grow text-left">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Fetchmon</h3>
+          <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
+            Pokémon Info App using React and PokéAPI, with search and detailed stats.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">React</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Tailwind</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">APIs</span>
+          </div>
+          <a href="https://github.com/Shreyas2545" target="_blank" class="mt-auto inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+            View Project
+          </a>
+        </div>
       </div>
+
+      <!-- Project 3: Weather API -->
+      <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+        <img src="assets/weather-app-src.png" alt="Weather App" class="w-full h-44 object-cover">
+        <div class="p-6 flex flex-col flex-grow text-left">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Weather API</h3>
+          <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
+            Weather app with real-time API data, built using React & OpenWeather API.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">React</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Tailwind</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">JavaScript</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">APIs</span>
+          </div>
+          <a href="https://github.com/Shreyas2545" target="_blank" class="mt-auto inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: To-Do List -->
+      <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+        <img src="assets/to-do-list-src.png" alt="To-Do List" class="w-full h-44 object-cover">
+        <div class="p-6 flex flex-col flex-grow text-left">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">To-Do List</h3>
+          <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
+            Interactive To-Do List with add, edit, and delete features, built in JS.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">React</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Tailwind</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">JavaScript</span>
+          </div>
+          <a href="https://github.com/Shreyas2545" target="_blank" class="mt-auto inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5: TextUtils App -->
+      <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+        <img src="assets/textutils-src.png" alt="TextUtils App" class="w-full h-44 object-cover">
+        <div class="p-6 flex flex-col flex-grow text-left">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">TextUtils App</h3>
+          <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
+            React-based text utility app for case conversion, counting words & characters.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">React</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Tailwind</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">JavaScript</span>
+          </div>
+          <a href="https://github.com/Shreyas2545" target="_blank" class="mt-auto inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 6: Calculator App -->
+      <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+        <img src="assets/calculator-src.png" alt="Calculator App" class="w-full h-44 object-cover">
+        <div class="p-6 flex flex-col flex-grow text-left">
+          <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Calculator App</h3>
+          <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
+            A simple yet powerful calculator application built to perform basic arithmetic operations.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">React</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Tailwind</span>
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">JavaScript</span>
+          </div>
+          <a href="https://github.com/Shreyas2545" target="_blank" class="mt-auto inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+
     </div>
-  </section>
-  <!-- Contact Section -->
+  </div>
+</section>
+
+<script>
+  const toggleBtn = document.getElementById("toggle-projects");
+  const extraProjects = document.querySelectorAll(".project-extra");
+  let expanded = false;
+
+  toggleBtn.addEventListener("click", () => {
+    extraProjects.forEach(p => p.classList.toggle("hidden"));
+    expanded = !expanded;
+    toggleBtn.textContent = expanded ? "Show Less" : "Show More";
+  });
+</script>
+
+ <!-- Contact Section -->
   <section id="contact" class="py-16 bg-white dark:bg-gray-900">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-3xl font-bold text-green-800 dark:text-green-400">Contact Me</h2>
