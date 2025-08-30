@@ -73,3 +73,6 @@ I am a Web and Software Developer currently pursuing a Diploma in Computer Engin
 * **Instagram**: [@_shreyas.ig](https://www.instagram.com/_shreyas.ig/?hl=en)
 
 ---
+
+Made with ❤️ by Shreyas Hadawale
+
