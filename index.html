@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shreyas Hadawale</title>
 
-  <!-- Tailwind CSS (with config defined before it loads) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "D2BNXxc4_f3WD01-l",
+      });
+    })();
+  </script>
+
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -13,26 +21,24 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome for icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body class="bg-white text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200">
 
-  <!-- Navigation -->
   <nav class="shadow-lg fixed w-full z-10 bg-white dark:bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
         <a href="#" class="text-2xl font-bold text-green-800 dark:text-green-400">Shreyas10</a>
         <div class="hidden md:flex space-x-8">
           <a href="#about" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">About</a>
-          <a href="#projects" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Projects</a>
+          <a href="#education" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Education</a>
+          <a href="#achievement-experience" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Experience</a>
           <a href="#skills" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Skills</a>
+          <a href="#projects" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Projects</a>
           <a href="#contact" class="text-gray-800 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 transition">Contact</a>
         </div>
         <div class="flex items-center">
-          <!-- Theme Toggle Button -->
           <button id="theme-toggle" class="text-gray-800 dark:text-gray-300 focus:outline-none mr-4">
             <i id="theme-icon" class="fas fa-sun"></i>
           </button>
@@ -42,44 +48,40 @@
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
       <a href="#about" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">About</a>
-      <a href="#projects" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Projects</a>
+      <a href="#education" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Education</a>
+      <a href="#achievement-experience" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Experience</a>
       <a href="#skills" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Skills</a>
+      <a href="#projects" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Projects</a>
       <a href="#contact" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <header class="h-screen flex flex-col items-center justify-center text-center p-8 bg-white dark:bg-gray-900">
     <h1 class="text-6xl md:text-5xl font-extrabold">
       Hey, I'm <span class="text-green-800 dark:text-green-400">Shreyas Hadawale</span>
     </h1>
     <p class="text-lg md:text-xl text-gray-800 dark:text-gray-300 mt-3">A Web & Software Developer</p>
     
-    <!-- Buttons Container -->
     <div class="mt-6 flex space-x-4">
-      <a href="#about" class="px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
-        Learn More
-      </a>
-      <a href="your-resume-link.pdf" target="_blank" class="px-6 py-3 border-2 border-green-800 dark:border-green-500 text-green-800 dark:text-green-500 rounded-full text-lg hover:bg-green-800 dark:hover:bg-green-500 hover:text-white transition">
+      <a href="your-resume-link.pdf" target="_blank" class="px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
         View Resume
       </a>
+      <a href="#about" class="px-6 py-3 border-2 border-green-800 dark:border-green-500 text-green-800 dark:text-green-500 rounded-full text-lg hover:bg-green-800 dark:hover:bg-green-500 hover:text-white transition">
+        Learn More
+      </a>
     </div>
-  
     <p class="text-3xl mt-6 text-gray-800 dark:text-gray-300 text-sm md:text-base max-w-xl">
       A passionate Web Developer & Software Engineer, crafting innovative and scalable solutions for the digital world.
     </p>
   </header>
   
-  <!-- About Section -->
   <section id="about" class="py-16 bg-gray-100 dark:bg-gray-800">
     <div class="max-w-6xl mx-auto px-6 lg:flex lg:items-center">
       
       <div class="mt-6 lg:mt-0 lg:ml-10">
         <h2 class="text-3xl font-bold text-green-800 dark:text-green-400">About Me</h2>
         <p class="mt-4 text-gray-800 dark:text-gray-300">
-          I am Shreyas Hadawale, a passionate Web and Software Developer specializing in building modern, responsive websites and applications. Currently pursuing a diploma in Computer Engineering, I focus on creating clean, efficient, and user-friendly solutions for portfolios, e-commerce platforms, and custom software.
-          <br><br>
-          With a strong foundation in HTML, CSS, JavaScript, and C++, I continuously refine my skills to stay ahead in both web development and software engineering. My goal is to develop high-quality, scalable applications that enhance user experiences and solve real-world problems.
+          I am Shreyas Hadawale, a passionate Web and Software Developer specializing in building modern, responsive websites and applications. With a strong foundation in HTML, CSS, JavaScript, React.js, Tailwind CSS, and Node.js, I focus on creating clean, efficient, and user-friendly solutions for portfolios, e-commerce platforms, and custom software. My goal is to develop high-quality, scalable applications that enhance user experiences and solve real-world problems.
         </p>
         <a href="#projects" class="mt-4 inline-block px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
           View Projects
@@ -87,60 +89,113 @@
       </div>
     </div>
   </section>
-
-  <!-- Skills -->
-  <section id="skills" class="py-16 bg-gray-100 dark:bg-gray-900">
-    <div class="max-w-6xl mx-auto px-200">
+  
+  <section id="education" class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center pb-5">Education</h2>
+      <ol class="relative border-s border-gray-200 dark:border-gray-700">
+        <li class="mb-10 ms-6">
+          <span class="absolute flex items-center justify-center w-6 h-6 bg-green-800 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-green-400">
+            <i class="fa-solid fa-graduation-cap w-3 h-3 text-white dark:text-gray-900"></i>
+          </span>
+          <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Diploma in Computer Engineering</h3>
+          <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Vidyalankar Polytechnic 2023 - Present</time>
+          <p class="text-base font-normal text-gray-500 dark:text-gray-400">Currently pursuing a diploma, focusing on core programming, software development, and web technologies.</p>
+        </li>
+        <li class="mb-10 ms-6">
+          <span class="absolute flex items-center justify-center w-6 h-6 bg-green-800 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-green-400">
+            <i class="fa-solid fa-graduation-cap w-3 h-3 text-white dark:text-gray-900"></i>
+          </span>
+          <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">SSC</h3>
+          <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">A.E.S High School (2022 - 2023)</time>
+          <p class="text-base font-normal text-gray-500 dark:text-gray-400">Achieved a strong academic foundation with a final score of **92%**.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  
+  <section id="achievement-experience" class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center pb-5">Achievement and Experience</h2>
+      <ol class="items-center sm:flex">
+        <li class="relative mb-6 sm:mb-0">
+          <div class="flex items-center">
+            <div class="z-10 flex items-center justify-center w-6 h-6 bg-green-800 rounded-full ring-0 ring-gray-100 dark:bg-green-400 sm:ring-8 dark:ring-gray-800 shrink-0">
+              <i class="fa-solid fa-trophy w-3 h-3 text-white dark:text-gray-900"></i>
+            </div>
+            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+          </div>
+          <div class="mt-3 sm:pe-8">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Runner Up at Vidyalankar Polytechnic VP Industrial Hackathon 2025</h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">August 2025</time>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Developed the **Techshala Website** to manage event schedules and team information, contributing to a 2nd place finish. This project enhanced student engagement and showcased the college's legacy in technical education.</p>
+          </div>
+        </li>
+        <li class="relative mb-6 sm:mb-0">
+          <div class="flex items-center">
+            <div class="z-10 flex items-center justify-center w-6 h-6 bg-green-800 rounded-full ring-0 ring-gray-100 dark:bg-green-400 sm:ring-8 dark:ring-gray-800 shrink-0">
+              <i class="fa-solid fa-briefcase w-3 h-3 text-white dark:text-gray-900"></i>
+            </div>
+            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+          </div>
+          <div class="mt-3 sm:pe-8">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Intern at Hertzsoft Pvt Ltd</h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">June 2025 - August 2025</time>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Created Hertzprint, a full-featured e-commerce platform for on-demand printing services. The website successfully streamlined the ordering process and fulfilled various user design needs.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  
+  <section id="skills" class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center mb-5">Skills</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
-        <!-- Skill cards -->
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Git</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">JavaScript</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">HTML-CSS</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Node.js</div>        
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">React.js</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">TailwindCSS</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Java</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">C-C++</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Python</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">SQL</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Canva</div>
-        <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-xl shadow text-gray-800 
-                    dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
-                    border border-transparent hover:border-green-500 hover:border-b-2 duration-300">MongoDB</div>
-    
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Git</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">JavaScript</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">HTML-CSS</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Node.js</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">React.js</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">TailwindCSS</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Java</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">C-C++</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Python</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">SQL</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">Canva</div>
+        <div class="skill-card p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow text-gray-800 
+                     dark:text-white cursor-pointer transition transform hover:scale-105 hover:shadow-lg 
+                     border border-transparent hover:border-green-500 hover:border-b-2 duration-300">MongoDB</div>
       </div>
     </div>
   </section>
-
-  <!-- Projects Section -->
+  
   <section id="projects" class="py-16 bg-gray-100 dark:bg-gray-800">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center pb-5">Projects</h2>
       <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        <!-- Project 1: Techshala Website -->
         <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/techshala-src.png" alt="Techshala Website" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
@@ -162,8 +217,7 @@
           </div>
         </div>
 
-        <!-- Project 2: Fetchmon -->
-        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/fetchmon-src.png" alt="Fetchmon" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Fetchmon</h3>
@@ -183,7 +237,6 @@
           </div>
         </div>
 
-        <!-- Project 3: Weather API -->
         <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/weather-app-src.png" alt="Weather App" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
@@ -205,7 +258,6 @@
           </div>
         </div>
 
-        <!-- Project 4: To-Do List -->
         <div class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/to-do-list-src.png" alt="To-Do List" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
@@ -226,7 +278,6 @@
           </div>
         </div>
 
-        <!-- Project 5: TextUtils App -->
         <div class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/textutils-src.png" alt="TextUtils App" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
@@ -247,7 +298,6 @@
           </div>
         </div>
 
-        <!-- Project 6: Calculator App -->
         <div class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/calculator-src.png" alt="Calculator App" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
@@ -269,7 +319,6 @@
         </div>
       </div>
 
-      <!-- Show More Button -->
       <div class="text-center mt-8">
         <button id="toggle-projects" class="px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
           Show More
@@ -278,36 +327,74 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white dark:bg-gray-900">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-green-800 dark:text-green-400">Contact Me</h2>
-      <p class="text-gray-800 dark:text-gray-300 mt-4">Let's work together! Reach out to me.</p>
-      <a href="mailto:shreyashadawale25@gmail.com" class="mt-6 inline-block px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
-        Email Me
-      </a>
-  
-      <!-- Social Icons -->
-      <div class="flex justify-center space-x-6 mt-6">
-        <a href="https://www.linkedin.com/in/shreyas-hadawale-9104672b6/" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/Shreyas2545" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.instagram.com/_shreyas.ig/?hl=en" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="mailto:shreyashadawale25@gmail.com" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition" title="Send me an email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
+<section id="contact" class="py-16 bg-white dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-green-800 dark:text-green-400">Contact Me</h2>
+    <p class="text-gray-800 dark:text-gray-300 mt-4">Let's work together! Reach out to me.</p>
+    
+    <form id="contact-form" class="mt-8 max-w-lg mx-auto space-y-6">
+      <div>
+        <label for="name" class="block text-left text-sm font-medium text-gray-800 dark:text-gray-300">Name</label>
+        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 p-2" required>
       </div>
+      <div>
+        <label for="email" class="block text-left text-sm font-medium text-gray-800 dark:text-gray-300">Email</label>
+        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 p-2" required>
+      </div>
+      <div>
+        <label for="subject" class="block text-left text-sm font-medium text-gray-800 dark:text-gray-300">Subject</label>
+        <input type="text" id="subject" name="subject" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 p-2">
+      </div>
+      <div>
+        <label for="message" class="block text-left text-sm font-medium text-gray-800 dark:text-gray-300">Message</label>
+        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 p-2" required></textarea>
+      </div>
+      <button type="submit" class="w-full px-6 py-3 bg-green-800 dark:bg-green-500 text-white rounded-full text-lg hover:bg-green-700 dark:hover:bg-green-400 transition">
+        Send Message
+      </button>
+    </form>
+    
+    <div class="flex justify-center space-x-6 mt-6">
+      <a href="https://www.linkedin.com/in/shreyas-hadawale-9104672b6/" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/Shreyas2545" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.instagram.com/_shreyas.ig/?hl=en" target="_blank" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="mailto:shreyashadawale25@gmail.com" class="text-gray-800 dark:text-gray-300 text-3xl hover:text-green-800 dark:hover:text-green-400 transition" title="Send me an email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
     </div>
-  </section>
-  
-  <!-- JavaScript -->
+  </div>
+</section>
+
   <script>
-    // Skill card click effect
+    // JavaScript for EmailJS functionality
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevents the default form submission
+
+      let parms = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value,
+      };
+
+      emailjs.send("service_l2up4u5", "template_u2eqrbn", parms)
+        .then(function(response) {
+          alert("Email sent successfully!");
+          contactForm.reset(); // Clear the form
+        }, function(error) {
+          alert("Failed to send email. Please try again later.");
+          console.error('EmailJS Error:', error);
+        });
+    });
+
+    // Existing portfolio JavaScript functions
     document.querySelectorAll('.skill-card').forEach(card => {
       card.addEventListener('click', () => {
         document.querySelectorAll('.skill-card').forEach(c => c.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50', 'dark:bg-blue-900/30'));
@@ -315,7 +402,6 @@
       });
     });
 
-    // Show More/Show Less for Projects
     document.addEventListener('DOMContentLoaded', () => {
       const toggleButton = document.getElementById('toggle-projects');
       const extraProjects = document.querySelectorAll('.project-extra');
@@ -330,21 +416,18 @@
       });
     });
 
-    // Mobile menu toggle
     document.getElementById('menu-button').addEventListener('click', function () {
       var menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
     });
-  
-    // Smooth scrolling for anchor links
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
-  
-    // Theme toggle functionality
+    
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     themeToggle.addEventListener('click', () => {
