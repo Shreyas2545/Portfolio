@@ -69,7 +69,7 @@
         <p class="text-xl mt-6 text-gray-800 font-semibold dark:text-gray-300 max-w-xl">
             A passionate Web Developer & Software Engineer, crafting innovative and scalable solutions for the digital world.
         </p>
-        <p id="viewerCount" class="text-sm text-gray-300 mt-3 opacity-0 transition-opacity duration-700">👁️ Views: Loading...</p>    </header>
+       <p id="viewerCount" class="text-sm text-gray-300 mt-3">👁️ Views: Loading...</p>    </header>
 
     <section id="about" class="py-16 bg-gray-100 dark:bg-gray-800">
         <div class="max-w-6xl mx-auto px-6 lg:flex lg:items-center">
@@ -517,28 +517,31 @@
         }
     </script>
     <script>
-  const el = document.getElementById("viewerCount");
   const countUrl = 'https://api.countapi.xyz/hit/shreyas-portfolio/views';
 
+  // Only increment once per browser
   if (!localStorage.getItem("counted")) {
     fetch(countUrl)
       .then(res => res.json())
       .then(data => {
-        el.innerText = `👁️ Views: ${data.value}`;
-        el.classList.remove("opacity-0");
-        el.classList.add("opacity-100");
+        document.getElementById("viewerCount").innerText = `👁️ Views: ${data.value}`;
         localStorage.setItem("counted", "true");
+      })
+      .catch(() => {
+        document.getElementById("viewerCount").innerText = '👁️ Views: N/A';
       });
   } else {
     fetch("https://api.countapi.xyz/get/shreyas-portfolio/views")
       .then(res => res.json())
       .then(data => {
-        el.innerText = `👁️ Views: ${data.value}`;
-        el.classList.remove("opacity-0");
-        el.classList.add("opacity-100");
+        document.getElementById("viewerCount").innerText = `👁️ Views: ${data.value}`;
+      })
+      .catch(() => {
+        document.getElementById("viewerCount").innerText = '👁️ Views: N/A';
       });
   }
 </script>
+
 
 </body>
 </html>
