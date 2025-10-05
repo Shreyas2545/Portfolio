@@ -516,30 +516,16 @@
             });
         }
     </script>
-    <script>
-  const countUrl = 'https://api.countapi.xyz/hit/shreyashadawale-portfolio/views';
-
-  // Only increment once per browser
-  if (!localStorage.getItem("counted")) {
-    fetch(countUrl)
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("viewerCount").innerText = `👁️ Views: ${data.value}`;
-        localStorage.setItem("counted", "true");
-      })
-      .catch(() => {
-        document.getElementById("viewerCount").innerText = '👁️ Views: N/A';
-      });
-  } else {
-    fetch("https://api.countapi.xyz/get/shreyas-portfolio/views")
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("viewerCount").innerText = `👁️ Views: ${data.value}`;
-      })
-      .catch(() => {
-        document.getElementById("viewerCount").innerText = '👁️ Views: N/A';
-      });
-  }
+   <script>
+  fetch('https://api.countapi.xyz/hit/shreyashadawale-portfolio/views')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('viewerCount').innerText = `👁️ Views: ${data.value}`;
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById('viewerCount').innerText = '👁️ Views: N/A';
+    });
 </script>
 
 
