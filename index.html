@@ -69,7 +69,7 @@
         <p class="text-xl mt-6 text-gray-800 font-semibold dark:text-gray-300 max-w-xl">
             A passionate Web Developer & Software Engineer, crafting innovative and scalable solutions for the digital world.
         </p>
-       <p id="viewerCount" class="text-sm text-gray-300 mt-3">👁️ Views: Loading...</p>    </header>
+       <p id="viewerCount" class="text-sm text-gray-300 mt-3">Views: Loading...</p>    </header>
 
     <section id="about" class="py-16 bg-gray-100 dark:bg-gray-800">
         <div class="max-w-6xl mx-auto px-6 lg:flex lg:items-center">
@@ -520,11 +520,11 @@
   fetch('https://api.countapi.xyz/hit/shreyashadawale-portfolio/views')
     .then(res => res.json())
     .then(data => {
-      document.getElementById('viewerCount').innerText = `👁️ Views: ${data.value}`;
+      document.getElementById('viewerCount').innerText = `Views: ${data.value}`;
     })
     .catch(err => {
       console.error(err);
-      document.getElementById('viewerCount').innerText = '👁️ Views: N/A';
+      document.getElementById('viewerCount').innerText = 'Views: N/A';
     });
 </script>
 
