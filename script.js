@@ -7,4 +7,4 @@ function sendMail() {
     };
 
   emailjs.send("service_buxrfhw","template_u2eqrbn",parms).then(alert("Email sent successfully!!!"))
-}
+};
