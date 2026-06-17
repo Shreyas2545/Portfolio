@@ -14,6 +14,15 @@
       darkMode: 'class',
     }
   </script>
+  <style>
+    /* Ensure project card buttons align to the bottom of the card and add spacing */
+    #projects-grid .p-6 { display: flex; flex-direction: column; gap: 1.5rem; }
+    /* Space between tech tag chips and buttons */
+    #projects-grid .p-6 .flex.flex-wrap { gap: 0.75rem; margin-bottom: 0.25rem; }
+    /* Keep the button container pinned to the card bottom */
+    #projects-grid .p-6 > .mt-6 { margin-top: auto; }
+    #projects-grid .p-6 > div.mt-6 { margin-top: auto; }
+  </style>
 </head>
 
 <body class="bg-white text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-200">
@@ -270,7 +279,7 @@
    class="w-full h-44 object-cover"> 
    <div class="p-6 flex flex-col flex-grow text-left"> 
     <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Object Detection Project</h3>
-     <p class="text-gray-800 dark:text-gray-300 text-sm mb-4"> Real-time and video object detection using YOLOv8 & PyTorch with a Flask/OpenCV web UI and fine-tuned checkpoints for improved accuracy. </p>
+    <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">Object detection is a project that delivers real-time detection results with YOLOv8, PyTorch, and OpenCV, backed by Flask and MongoDB and powered by multiple ML and DL algorithms.</p>
       <div class="flex flex-wrap gap-2 mt-3"> <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Python</span> <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">PyTorch</span>
          <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">YOLOv8</span>
           <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">OpenCV</span>
@@ -310,7 +319,7 @@
         </div>
 
         <div
-          class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+          class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/weather-app-src.png" alt="Weather App" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Weather API</h3>
@@ -430,7 +439,7 @@
 
         <div
           class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
-          <img src="assets/amazon-clone-screenshot.png" alt="Amazon Clone" class="w-full h-44 object-cover">
+          <img src="assets/amazon-clone.png" alt="Amazon Clone" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Amazon Clone</h3>
             <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
@@ -460,7 +469,7 @@
 
         <div
           class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
-          <img src="assets/Before_search.png" alt="Vocably" class="w-full h-44 object-cover">
+          <img src="assets/vocably.png" alt="Vocably" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Vocably</h3>
             <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
