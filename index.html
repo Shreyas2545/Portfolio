@@ -22,11 +22,9 @@
     /* Keep the button container pinned to the card bottom and left-aligned */
     #projects-grid .p-6 > .mt-6 { margin-top: auto; justify-content: flex-start; }
     #projects-grid .p-6 > div.mt-6 { margin-top: auto; justify-content: flex-start; }
-    /* Collapse the project list on laptop/desktop until Show More is clicked */
-    @media (min-width: 1024px) {
-      #projects-grid.projects-collapsed .project-extra {
-        display: none;
-      }
+    /* Hide the extra project cards until View More Projects is clicked */
+    #projects-grid .project-extra {
+      display: none;
     }
   </style>
 </head>
@@ -331,7 +329,7 @@
           </div>
         </div>
 
-<div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+  <div class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/techshala-src.png" alt="Techshala Website" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Techshala Website</h3>
@@ -414,7 +412,7 @@
         </div>
 
         <div
-          class="project-extra bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+          class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/to-do-list-src.png" alt="To-Do List" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">To-Do List</h3>
