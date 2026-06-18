@@ -22,6 +22,12 @@
     /* Keep the button container pinned to the card bottom */
     #projects-grid .p-6 > .mt-6 { margin-top: auto; }
     #projects-grid .p-6 > div.mt-6 { margin-top: auto; }
+    /* Collapse the project list on laptop/desktop until Show More is clicked */
+    @media (min-width: 1024px) {
+      #projects-grid.projects-collapsed .project-extra {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -49,7 +55,6 @@
           <button id="theme-toggle" class="text-gray-800 dark:text-gray-300 focus:outline-none">
             <i id="theme-icon" class="fas fa-sun"></i>
           </button>
-          <button id="menu-button" class="md:hidden text-gray-800 dark:text-gray-300 focus:outline-none">☰</button>
         </div>
       </div>
     </div>
@@ -92,7 +97,6 @@
       world.
     </p>
   </header>
-
   <section id="about" class="py-16 bg-gray-100 dark:bg-gray-800">
     <div class="max-w-6xl mx-auto px-6 lg:flex lg:items-center">
       <div class="mt-6 lg:mt-0 lg:ml-10">
@@ -243,8 +247,7 @@
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-green-800 dark:text-green-400 text-center pb-5">Projects</h2>
       <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        <div
-          class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/techshala-src.png" alt="Techshala Website" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Techshala Website</h3>
@@ -252,14 +255,10 @@
               A project that showcases Techshala events and activities, winner of my first hackathon.
             </p>
             <div class="flex flex-wrap gap-2 mt-3">
-              <span
-                class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">HTML</span>
-              <span
-                class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">CSS</span>
-              <span
-                class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">JavaScript</span>
-              <span
-                class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">SupaBase</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">HTML</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">CSS</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">JavaScript</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">SupaBase</span>
             </div>
             <div class="mt-6 flex justify-center gap-4">
               <a href="https://github.com/Shreyas2545/techshala-project" target="_blank"
@@ -274,22 +273,60 @@
           </div>
         </div>
 
-<div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full"> 
-  <img src="assets/object-detection-src.png" alt="Object Detection Project"
-   class="w-full h-44 object-cover"> 
-   <div class="p-6 flex flex-col flex-grow text-left"> 
-    <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Object Detection Project</h3>
-    <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">Object detection is a project that delivers real-time detection results with YOLOv8, PyTorch, and OpenCV, backed by Flask and MongoDB and powered by multiple ML and DL algorithms.</p>
-      <div class="flex flex-wrap gap-2 mt-3"> <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Python</span> <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">PyTorch</span>
-         <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">YOLOv8</span>
-          <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">OpenCV</span>
-           <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Flask</span> </div>
-            <div class="mt-6 flex justify-center gap-4"> <a href="https://github.com/Shreyas2545/object-detection-project" target="_blank" class="inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition"> 
-              <i class="fa-brands fa-github"></i> get code </a>
-               <a href="https://github.com/Shreyas2545/object-detection-project" target="_blank" class="inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition"> View Project </a> </div> </div> </div>
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+          <img src="assets/odp.png" alt="Object Detection Project" class="w-full h-44 object-cover">
+          <div class="p-6 flex flex-col flex-grow text-left">
+            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Object Detection Project</h3>
+            <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">Object detection is a project that delivers real-time detection results with YOLOv8, PyTorch, and OpenCV, backed by Flask and MongoDB and powered by multiple ML and DL algorithms.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Python</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">PyTorch</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">YOLOv8</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">OpenCV</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Flask</span>
+            </div>
+            <div class="mt-6 flex justify-center gap-4">
+              <a href="https://github.com/Shreyas2545/object-detection-project" target="_blank"
+                class="inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+                <i class="fa-brands fa-github"></i> get code
+              </a>
+              <a href="https://github.com/Shreyas2545/object-detection-project" target="_blank"
+                class="inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+                View Project
+              </a>
+            </div>
+          </div>
+        </div>
 
-        <div
-          class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:hover:shadow-green-500/50 flex flex-col h-full">
+        <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+          <img src="assets/hertzprint.png" alt="HertzPrint" class="w-full h-44 object-cover">
+          <div class="p-6 flex flex-col flex-grow text-left">
+            <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">HertzPrint</h3>
+            <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
+              A full-stack custom print and merchandise platform built with React, Vite, Node.js, Express, and MongoDB. It allows users to browse products, personalize designs with an interactive canvas editor, save their creations, manage carts and checkout, and track orders through a complete user dashboard.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">React</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Redux Toolkit</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Tailwind CSS</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Node.js</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Express</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">MongoDB</span>
+            </div>
+            <div class="mt-6 flex justify-center gap-4">
+              <a href="https://github.com/Shreyas2545/Intern-Project-Main" target="_blank"
+                class="inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+                <i class="fa-brands fa-github"></i> Get Code
+              </a>
+              <a href="https://github.com/Shreyas2545/Intern-Project-Main" target="_blank"
+                class="inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
+                View Project
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/fetchmon-src.png" alt="Fetchmon" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">Fetchmon</h3>
@@ -297,15 +334,11 @@
               Pokémon Info App using React and PokéAPI, with search and detailed stats.
             </p>
             <div class="flex flex-wrap gap-2 mt-3">
-              <span
-                class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">React</span>
-              <span
-                class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Tailwind</span>
-              <span
-                class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">APIs</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">React</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">Tailwind</span>
+              <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm border border-green-400 text-green-400">APIs</span>
             </div>
             <div class="mt-6 flex justify-center gap-4">
-
               <a href="https://github.com/Shreyas2545/fetchmon" target="_blank"
                 class="inline-block px-4 py-2 bg-green-800 dark:bg-green-500 text-white rounded-full text-sm hover:bg-green-700 dark:hover:bg-green-400 transition">
                 <i class="fa-brands fa-github"></i> get code
@@ -350,7 +383,7 @@
         </div>
 
         <div
-          class="project-extra hidden bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
+          class="project-extra bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
           <img src="assets/to-do-list-src.png" alt="To-Do List" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">To-Do List</h3>
@@ -618,13 +651,22 @@
 
     // Show More / Show Less for Projects
     const toggleBtn = document.getElementById('toggle-projects');
+    const projectsGrid = document.getElementById('projects-grid');
     const extraProjects = document.querySelectorAll('.project-extra');
     let isExpanded = false;
 
+    projectsGrid.classList.add('projects-collapsed');
+
     toggleBtn.addEventListener('click', () => {
       isExpanded = !isExpanded;
+      projectsGrid.classList.toggle('projects-collapsed', !isExpanded);
       extraProjects.forEach(project => {
         project.classList.toggle('hidden', !isExpanded);
+        if (isExpanded) {
+          project.style.display = 'flex';
+        } else {
+          project.style.display = '';
+        }
       });
       toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
     });
