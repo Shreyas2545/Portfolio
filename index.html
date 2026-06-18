@@ -299,7 +299,7 @@
         </div>
 
         <div class="bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/50 flex flex-col h-full">
-          <img src="assets/hertzprint.png" alt="HertzPrint" class="w-full h-44 object-cover">
+          <img src="assets/hertzprint.jpeg" alt="HertzPrint" class="w-full h-44 object-cover">
           <div class="p-6 flex flex-col flex-grow text-left">
             <h3 class="text-xl font-semibold text-green-800 dark:text-green-400 mb-2">HertzPrint</h3>
             <p class="text-gray-800 dark:text-gray-300 text-sm mb-4">
@@ -622,10 +622,13 @@
 
   <script>
     // Mobile menu toggle
-    document.getElementById('menu-button').addEventListener('click', function () {
-      var menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    });
+    const menuButton = document.getElementById('menu-button');
+    if (menuButton) {
+      menuButton.addEventListener('click', function () {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      });
+    }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
